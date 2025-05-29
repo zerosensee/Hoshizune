@@ -4,6 +4,7 @@ import { ContextMenuCommand, SlashCommand } from '@/base';
 import { CommandsHandler, EventsHandler } from '@/handlers';
 
 import { createLogger, env } from '@/utils';
+import { Database } from './services';
 
 export class BotClient extends Client<true> {
   public readonly logger = createLogger('client');
@@ -14,11 +15,17 @@ export class BotClient extends Client<true> {
     ContextMenuCommand
   >();
 
+  public readonly database: Database;
   public readonly nekosBest: NekosBest;
 
-  public constructor(options: ClientOptions, nekosBest: NekosBest) {
+  public constructor(
+    options: ClientOptions,
+    database: Database,
+    nekosBest: NekosBest,
+  ) {
     super(options);
 
+    this.database = database;
     this.nekosBest = nekosBest;
   }
 

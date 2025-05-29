@@ -4,21 +4,36 @@ import { GatewayIntentBits } from 'discord.js';
 import { Client as NekosBest } from 'nekos-best.js';
 import { createLogger, env } from '@/utils';
 import { BotClient } from './bot-client';
+import { Database } from '@/services';
 
 const logger = createLogger('hoshizune');
 
+const database = new Database();
 const nekosBest = new NekosBest();
 
 const botClient = new BotClient(
   {
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences],
+    intents: [
+      GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildPresences,
+      GatewayIntentBits.GuildMembers,
+    ],
   },
+  database,
   nekosBest,
 );
 
 (async () => {
   logger.info('🤫 Environment variables preparing');
   await env.prepare();
+
+  try {
+    await database.$connect();
+    logger.info(`🗃️ Database connected`);
+  } catch (error) {
+    logger.error(`❌ Failed to connect database`, error);
+    process.exit(1);
+  }
 
   if (process.argv.includes('--rest')) {
     logger.info('🌍 REST mode selected, starting');
