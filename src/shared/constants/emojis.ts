@@ -4,4 +4,5 @@ export const EMOJIS = {
   STATUS_IDLE: '<:status_sidle:1377450845460758609>',
   STATUS_DND: '<:status_dnd:1377450813701754880>',
   STATUS_OFFLINE: '<:status_offline:1377450859289514134>',
+  IMAGE: '<:image:1377625950715641907>',
 };
