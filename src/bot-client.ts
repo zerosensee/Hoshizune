@@ -1,6 +1,8 @@
 import { Client, ClientOptions, Collection, REST, Routes } from 'discord.js';
+import { Client as NekosBest } from 'nekos-best.js';
 import { ContextMenuCommand, SlashCommand } from '@/base';
 import { CommandsHandler, EventsHandler } from '@/handlers';
+
 import { createLogger, env } from '@/utils';
 
 export class BotClient extends Client<true> {
@@ -12,8 +14,12 @@ export class BotClient extends Client<true> {
     ContextMenuCommand
   >();
 
-  public constructor(options: ClientOptions) {
+  public readonly nekosBest: NekosBest;
+
+  public constructor(options: ClientOptions, nekosBest: NekosBest) {
     super(options);
+
+    this.nekosBest = nekosBest;
   }
 
   public async startRest(): Promise<void> {
