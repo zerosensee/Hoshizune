@@ -7,7 +7,7 @@ import { BotClient } from './bot-client';
 const logger = createLogger('hoshizune');
 
 const botClient = new BotClient({
-  intents: [GatewayIntentBits.Guilds],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences],
 });
 
 (async () => {

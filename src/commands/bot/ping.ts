@@ -34,7 +34,7 @@ export default class PingCommand extends SlashCommand {
 
     const embed = new EmbedBuilder()
       .setColor(COLORS.PRIMARY)
-      .setTitle(`${EMOJIS.PING} Hoshizune Ping`)
+      .setDescription(`### ${EMOJIS.PING} Hoshizune Ping`)
       .addFields(
         {
           name: '> Bot Latency',
@@ -51,7 +51,8 @@ export default class PingCommand extends SlashCommand {
       .setFooter({
         text: `Requested by ${userTag}`,
         iconURL: userAvatar,
-      });
+      })
+      .setTimestamp();
 
     await interaction.editReply({ embeds: [embed] });
   }
