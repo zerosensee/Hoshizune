@@ -1,9 +1,10 @@
 import { Client, ClientOptions, Collection, REST, Routes } from 'discord.js';
 import { Client as NekosBest } from 'nekos-best.js';
+
 import { ContextMenuCommand, SlashCommand } from '@/base';
 import { CommandsHandler, EventsHandler } from '@/handlers';
-
 import { createLogger, env } from '@/utils';
+
 import { Database } from './services';
 
 export class BotClient extends Client<true> {

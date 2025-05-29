@@ -1,6 +1,8 @@
 import { lstat, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+
 import { ClientEvents } from 'discord.js';
+
 import { Event } from '@/base';
 import { BotClient } from '@/bot-client';
 import { createLogger } from '@/utils';

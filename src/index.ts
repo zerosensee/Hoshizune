@@ -2,9 +2,11 @@ import process from 'node:process';
 
 import { GatewayIntentBits } from 'discord.js';
 import { Client as NekosBest } from 'nekos-best.js';
-import { createLogger, env } from '@/utils';
-import { BotClient } from './bot-client';
+
 import { Database } from '@/services';
+import { createLogger, env } from '@/utils';
+
+import { BotClient } from './bot-client';
 
 const logger = createLogger('hoshizune');
 

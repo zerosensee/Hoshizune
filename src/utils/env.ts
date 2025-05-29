@@ -2,6 +2,7 @@ import process from 'node:process';
 
 import { plainToInstance } from 'class-transformer';
 import { IsString, validate } from 'class-validator';
+
 import { createLogger } from './logger';
 
 class EnvVariables {

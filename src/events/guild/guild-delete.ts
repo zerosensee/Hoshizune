@@ -1,6 +1,7 @@
+import { Events, Guild } from 'discord.js';
+
 import { Event } from '@/base';
 import { BotClient } from '@/bot-client';
-import { Events, Guild } from 'discord.js';
 
 export default new Event(
   Events.GuildDelete,

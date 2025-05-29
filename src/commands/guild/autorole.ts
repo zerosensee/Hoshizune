@@ -1,11 +1,7 @@
-import { SlashCommand } from '@/base';
-import { BotClient } from '@/bot-client';
-import { COLORS, EMOJIS } from '@/shared/constants';
 import {
   ActionRowBuilder,
   ChatInputCommandInteraction,
   EmbedBuilder,
-  GuildMember,
   InteractionContextType,
   InteractionResponse,
   Message,
@@ -15,6 +11,10 @@ import {
   RoleSelectMenuBuilder,
   SlashCommandBuilder,
 } from 'discord.js';
+
+import { SlashCommand } from '@/base';
+import { BotClient } from '@/bot-client';
+import { COLORS, EMOJIS } from '@/shared/constants';
 
 export default class AutoRoleCommand extends SlashCommand {
   public constructor() {

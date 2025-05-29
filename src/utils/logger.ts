@@ -1,4 +1,5 @@
 import process from 'node:process';
+
 import winston, { Logger } from 'winston';
 
 const { combine, timestamp, printf, colorize } = winston.format;

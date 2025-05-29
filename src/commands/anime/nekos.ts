@@ -4,36 +4,37 @@ import {
   SlashCommandBuilder,
   SlashCommandSubcommandBuilder,
 } from 'discord.js';
+
 import { SlashCommand } from '@/base';
 import { BotClient } from '@/bot-client';
 
 const IMAGE_CATEGORIES = ['kitsune', 'neko', 'husbando', 'waifu'] as const;
 const GIF_CATEGORIES = [
-  'baka', // оскорбление / раздражение
-  'bite', // укусить
-  'blush', // покраснеть
-  'cry', // плакать
-  'cuddle', // обниматься
-  'dance', // танцевать
-  'facepalm', // фейспалм
-  'feed', // кормить
-  'happy', // счастливый
-  'highfive', // дать пять
-  'hug', // обнять
-  'kiss', // поцеловать
-  'laugh', // смеяться
-  'pat', // похлопать
-  'shrug', // пожать плечами
-  'slap', // шлёпнуть
-  'smile', // улыбаться
-  'smug', // самодовольный
-  'think', // думать
-  'thumbsup', // палец вверх
-  'tickle', // щекотать
-  'wave', // махать рукой
-  'wink', // подмигнуть
-  'nope', // нет
-  'angry', // злой
+  'baka',
+  'bite',
+  'blush',
+  'cry',
+  'cuddle',
+  'dance',
+  'facepalm',
+  'feed',
+  'happy',
+  'highfive',
+  'hug',
+  'kiss',
+  'laugh',
+  'pat',
+  'shrug',
+  'slap',
+  'smile',
+  'smug',
+  'think',
+  'thumbsup',
+  'tickle',
+  'wave',
+  'wink',
+  'nope',
+  'angry',
 ] as const;
 
 type ImageCategory = (typeof IMAGE_CATEGORIES)[number];

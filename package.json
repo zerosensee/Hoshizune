@@ -8,6 +8,7 @@
     "start": "cross-env NODE_ENV=production node -r tsconfig-paths/register dist/index",
     "dev": "nodemon --config ./nodemon.json",
     "rest": "nodemon --config ./nodemon.json --rest",
+    "deploy": "prisma migrate deploy",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "pretty": "prettier --write . && eslint . --fix",

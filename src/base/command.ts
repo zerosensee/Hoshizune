@@ -5,6 +5,7 @@ import {
   InteractionResponse,
   SlashCommandBuilder,
 } from 'discord.js';
+
 import { BotClient } from '@/bot-client';
 
 export abstract class SlashCommand {

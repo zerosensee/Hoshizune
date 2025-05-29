@@ -1,4 +1,5 @@
 import { ActivityType, Events } from 'discord.js';
+
 import { Event } from '@/base';
 
 export default new Event(Events.ClientReady, true, (botClient) => {

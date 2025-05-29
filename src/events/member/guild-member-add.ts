@@ -1,6 +1,7 @@
+import { Events, GuildMember, Role } from 'discord.js';
+
 import { Event } from '@/base';
 import { BotClient } from '@/bot-client';
-import { Events, GuildMember, Role } from 'discord.js';
 
 export default new Event(
   Events.GuildMemberAdd,

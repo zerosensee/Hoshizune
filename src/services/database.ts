@@ -1,9 +1,8 @@
-import { createLogger } from '@/utils';
 import { Prisma, PrismaClient } from '@prisma/generated';
-
+import { createLogger } from '@/utils';
 export class Database extends PrismaClient<
   Prisma.PrismaClientOptions,
-  'info' | 'warn' | 'error'
+  'error' | 'info' | 'warn'
 > {
   private readonly logger = createLogger('database');
 
@@ -20,7 +19,7 @@ export class Database extends PrismaClient<
     this.setupEventListeners();
   }
 
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.$on('info', (event: Prisma.LogEvent) =>
       this.logger.info(event.message),
     );
@@ -36,7 +35,7 @@ export class Database extends PrismaClient<
     });
   }
 
-  private async handleDisconnect() {
+  private async handleDisconnect(): Promise<void> {
     if (this.isReconnecting) return;
 
     this.isReconnecting = true;
