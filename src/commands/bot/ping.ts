@@ -27,14 +27,16 @@ export default class PingCommand extends SlashCommand {
     const botLatency = Date.now() - interaction.createdTimestamp;
     const gatewayLatency = botClient.ws.ping;
 
-    const botAvatar = interaction.user.displayAvatarURL();
+    const botAvatar = interaction.client.user.displayAvatarURL();
     const userAvatar = interaction.user.displayAvatarURL();
 
     const userTag = interaction.user.tag;
 
     const embed = new EmbedBuilder()
       .setColor(COLORS.PRIMARY)
-      .setDescription(`### ${EMOJIS.PING} Hoshizune Ping`)
+      .setDescription(
+        `### ${EMOJIS.PING} ${interaction.client.user.username} Ping`,
+      )
       .addFields(
         {
           name: '> Bot Latency',
