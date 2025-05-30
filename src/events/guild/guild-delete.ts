@@ -10,13 +10,25 @@ export default new Event(
     if (!guild.available) return;
 
     try {
-      await botClient.database.guild.delete({
+      const existing = await botClient.database.guild.findUnique({
         where: {
           discordId: guild.id,
         },
       });
+
+      if (!existing) {
+        botClient.logger.info(
+          `Guild ${guild.id} (${guild.name}) not found in database, skipping deletion.`,
+        );
+        return;
+      }
+
+      await botClient.database.guild.delete({
+        where: { discordId: guild.id },
+      });
+
       botClient.logger.info(
-        `Guild ${guild.id} (${guild.name}) removed from database`,
+        `Guild ${guild.id} (${guild.name}) removed from database.`,
       );
     } catch (error) {
       botClient.logger.error(`Error while removing guild ${guild.id}`, error);
