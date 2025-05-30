@@ -7,7 +7,7 @@ export default new Event(Events.ClientReady, true, (botClient) => {
 
   botClient.user.setActivity({
     type: ActivityType.Streaming,
-    name: 'yanima.space',
-    url: 'https://twitch.tv',
+    name: 'Yanima',
+    url: 'https://www.twitch.tv/yanimaspace',
   });
 });
