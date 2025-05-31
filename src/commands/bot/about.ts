@@ -55,7 +55,7 @@ export default class AboutCommand extends SlashCommand {
         },
         {
           name: '> Stack',
-          value: 'Discord.js 14.16.3, Typescript 5.7.2',
+          value: `${EMOJIS.DISCORDJS} Discord.js 14.16.3, ${EMOJIS.TYPESCRIPT} Typescript 5.7.2`,
           inline: false,
         },
         {
