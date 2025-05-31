@@ -11,5 +11,5 @@ export const EMOJIS = {
   RELEASE: '<:thermal_paste:1377061839837335793>',
   BOOSTY: '<:boosty:1377060654069846137>',
   TELEGRAM: '<:telegram:1377060009892122734>',
-  GITHUB: '<:github:1377060168507986061>нказаdcд',
+  GITHUB: '<:github:1377060168507986061>',
 };

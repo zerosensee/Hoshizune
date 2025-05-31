@@ -46,7 +46,16 @@ export default class AboutCommand extends SlashCommand {
         },
         {
           name: '> Developers',
-          value: USERS.DEVELOPERS.map((id) => `**・** <@${id}>`).join('\n'),
+          value: USERS.DEVELOPERS.map((userId) => `**・** <@${userId}>`).join(
+            '\n',
+          ),
+          inline: false,
+        },
+        {
+          name: '> Partners',
+          value: USERS.DEVELOPERS.map((userId) => `**・** <@${userId}>`).join(
+            '\n',
+          ),
           inline: false,
         },
         {
