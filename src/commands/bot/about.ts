@@ -66,7 +66,7 @@ export default class AboutCommand extends SlashCommand {
       ])
       .setTimestamp(interaction.client.user.createdTimestamp);
 
-    await interaction.reply({
+    await interaction.editReply({
       embeds: [embed],
     });
   }
