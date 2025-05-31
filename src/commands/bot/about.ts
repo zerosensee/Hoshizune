@@ -24,8 +24,6 @@ export default class AboutCommand extends SlashCommand {
     botClient: BotClient,
     interaction: ChatInputCommandInteraction,
   ): Promise<InteractionResponse | void> {
-    await interaction.deferReply();
-
     const bot = interaction.client.user;
 
     const embed = new EmbedBuilder()
@@ -46,16 +44,13 @@ export default class AboutCommand extends SlashCommand {
         },
         {
           name: '> Developers',
-          value: USERS.DEVELOPERS.map((userId) => `**・** <@${userId}>`).join(
-            '\n',
-          ),
+          value: USERS.DEVELOPERS.map((id) => `**・** <@${id}>`).join('\n'),
           inline: false,
         },
         {
           name: '> Partners',
-          value: USERS.DEVELOPERS.map((userId) => `**・** <@${userId}>`).join(
-            '\n',
-          ),
+          value:
+            USERS.PARTNERS?.map((id) => `**・** <@${id}>`).join('\n') ?? '—',
           inline: false,
         },
         {
@@ -73,10 +68,8 @@ export default class AboutCommand extends SlashCommand {
           inline: true,
         },
       ])
-      .setTimestamp(interaction.client.user.createdTimestamp);
+      .setTimestamp(bot.createdTimestamp);
 
-    await interaction.editReply({
-      embeds: [embed],
-    });
+    return interaction.reply({ embeds: [embed] });
   }
 }
