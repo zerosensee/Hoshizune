@@ -33,13 +33,13 @@ const botClient = new BotClient(
     logger.info('🌍 REST mode selected, starting');
     await botClient.startRest();
   } else {
-    // try {
-    //   await database.$connect();
-    //   logger.info(`🗃️ Database connected`);
-    // } catch (error) {
-    //   logger.error(`❌ Failed to connect database`, error);
-    //   process.exit(1);
-    // }
+    try {
+      await database.$connect();
+      logger.info(`🗃️ Database connected`);
+    } catch (error) {
+      logger.error(`❌ Failed to connect database`, error);
+      process.exit(1);
+    }
 
     logger.info('🤖 Bot mode selected, starting');
     await botClient.startBot();
