@@ -1,15 +1,15 @@
-import os from 'node:os';
+import os from 'node:os'
 
 import {
   ChatInputCommandInteraction,
   EmbedBuilder,
   InteractionResponse,
   SlashCommandBuilder,
-} from 'discord.js';
+} from 'discord.js'
 
-import { SlashCommand } from '@/base';
-import { BotClient } from '@/bot-client';
-import { COLORS, EMOJIS, URLS, USERS } from '@/shared/constants';
+import { SlashCommand } from '@/base'
+import { BotClient } from '@/bot-client'
+import { COLORS, EMOJIS, URLS, USERS } from '@/shared/constants'
 
 export default class AboutCommand extends SlashCommand {
   public constructor() {
@@ -45,12 +45,6 @@ export default class AboutCommand extends SlashCommand {
         {
           name: '> Developers',
           value: USERS.DEVELOPERS.map((id) => `**・** <@${id}>`).join('\n'),
-          inline: false,
-        },
-        {
-          name: '> Partners',
-          value:
-            USERS.PARTNERS?.map((id) => `**・** <@${id}>`).join('\n') ?? '—',
           inline: false,
         },
         {
